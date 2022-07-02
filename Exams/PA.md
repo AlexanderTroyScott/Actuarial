@@ -1,5 +1,82 @@
 :memo: Note: I had initially summarized the PA study material as a away to organize review material for a coworker and myself. I was surprised to learn that others were finding the material useful and it had continued to generate hits even years after I had passed the exam. Unfortunately I have not had the time to go back and make additions; therefore, I decided to copy everything over to this github repository so that it could be better maintained by the community and put a link to directing you here.
 
+# Misc.
+### Data exploration
+Number of elements in Dataset - Before and after modification
+
+Create a summary of the data
+> dataset %>% summary()  or dataset %>% glimpse()
+
+Discuss Target Variable 
+Mention what the flag means and ratio the number in each class
+
+> dataset %>% count(target_variable)
+
+If the responses do not appear equally distributed then the classes would appear to be **imbalanced**
+
+### Issue Resolution
+
+Some candidates may find it easier to manipulate the data in Excel and then import the adjusted file into R. 
+*Note: Many excel features, such as Pivot Tables, are disabled which prevents Excel being a good tool for Data Exploration*
+
+Delete Values
+Subset using set operators
+> dataset <- dataset[dataset$variable!=0,] 
+
+Replace Character Variables with Factors
+If any show character as a class replace them with factors:
+> dataset <- dataset %>% modify_if(is.character, as.factor) 
+Alternatively, you can convert characters to releveled factors in one step:
+> dataset <- dataset %>% mutate_if(is.character, fct_infreq)
+
+### Pre-Modeling
+
+**Level Reduction**
+Consider both **n** and **mean** of the target variable before combining groups.
+> dataset <- dataset %>% mutate(variable_bucket = case_when(variable < 50 ~ 0,variable <= 70 ~ 1,variable > 70 ~ 2))
+
+**Set Reference Levels**
+
+This **does not** effect predictions nor any measures of model fit
+
+This *does* effect decisions if hypothesis tests are conducted to consider removing specific factor levels.
+    * This is because the test compares each factor level to the base level
+
+Explicitly set a reference level - If you want to be testing other variables against one in particular
+> dataset <- relevel(dataset$variable, ref = "newBaseLevel")
+
+Set a reference level to have the most observations - If there are no obvious choices
+Displays the number of observations at each level
+> dataset$column %>% as.factor() %>% summary() 
+Set the highest frequency "column" to be the base level (Tidyverse Required)
+> dataset <- dataset %>% mutate(column = fct_infreq(column))
+
+**Train/Test Datasets**
+Verify the mean of the target variable is similar between training and testing datasets
+
+### Decision Trees
+### General Linear Models
+
+**Regularized Regression (Penalized Regression)**
+Standardize units - Coefficients are penalized the larger they are; therefore, if a variable is measuring Units consider changing to Dollars. 
+
+### Post-Modeling
+Confusion Matrices
+* Sensitivity - True Positive Rate = True Positives / (True Positives + False Negatives)
+* Specificity - True Negative Rate = True Negatives / (False Positives + True Negatives)
+* Precision - True Positives / (True Positives + False Positives)
+* Recall - Sensitivity
+
+Predictions
+Including response will adjust the output to be probabilities; otherwise, the output will be curtailed to the specified distribution.
+> sample.data %>% mutate(predicted_profit = predict(glm,sample.data,type="response"))
+
+### Useful Links
+http://uc-r.github.io/predictive 
+
+https://exampa.net/study-guide/
+
+https://www.casact.org/pubs/monographs/papers/05-Goldburd-Khare-Tevet.pdf
 
 # 6. Generalized Linear Models
 
