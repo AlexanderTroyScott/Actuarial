@@ -127,3 +127,68 @@ The more fit the model is to the training data, the less bias there will be; how
 5. mtry - Number of variables compared in the trees
 
 **GBM Hyperparameters**
+
+# 8. Cluster and Principal Component Analyses
+
+## a) Understand and apply K-means clustering. 
+
+**Summary of K-means clustering**
+1. Pick k points randomly, these are the clusters
+2. Group each other points to the nearest cluster
+3. Calculate mean of each cluster
+4. Repeat steps 2 and 3 until the mean does not move
+--- Repeat Steps 1-4 ----
+5. The result of each repitition are compared based on the *variance* in the distance between each observation and the cluster mean. The clustering with the **smallest variance** is the best clustering for a given *k*.
+
+The higher *k* is, the lower the total variance will be. The ideal *k* would tend to be when there is less reduction in variance by the addition of additional clusters. This is graphically shown in a elbow plot.  
+
+**K-means vs hierarchical clustering**
+
+[![Alt text](https://img.youtube.com/vi/4b5d3muPQmA/0.jpg)](https://www.youtube.com/watch?v=4b5d3muPQmA)
+
+## b) Understand and apply hierarchical clustering.
+
+Start with one observation and find the most similar one to it, then repeat for all observations, the most similar observations become the first cluster. Repeat, but treat the first cluster as a combined unit and use it to compare. Keep repeating until there is only one cluster.
+
+Dendrograms show similarities and the order which clusters were formed.
+
+Similarity needs to be defined:
+* Commonly Euclidean Distance. 
+
+> ?dist - Can show other methods along with calculations
+
+Compare also needs to be defined:
+* Centroid - Average of each cluster
+    * "Ward" - Like centroid, but also takes into account the variance within each cluster
+* Single-linkage - closest point in the cluster
+* Complete-linkage - furthest point in each cluster
+
+> ?hclust - Can show other methods, but knowing the above helps significantly
+
+Hierarchical clustering can be agglomerative (bottomup) or divisive (top-down) and they should give similar results. K-means clustering can simulate the divisive technique and is computationally much faster.
+
+Pro:
+* Shows all possible linkages between clusters
+* Understand how much clusters differ based on dendrogram length
+* No hyperparameters, the analyst can select the appropriate number of clusters for the business need 
+* Many methods to test and select which fits data best
+
+Con:
+* scalability, increasing observations will prevent interpretation
+* computationally intensive
+
+[![Alt text](https://img.youtube.com/vi/7xHsRkOdVwo/0.jpg)](https://www.youtube.com/watch?v=7xHsRkOdVwo)
+
+## c) Understand and apply principal component analysis. 
+
+**Summary of PCA Method**
+1. Two variables are graphically compared
+2. The average point is then calculated and plotted
+3. The graph is shifted so that this average point is at the origin
+4. PCA finds the best fitting line by **maximizing the sum of the squared distances from the projected points to the origin**
+    * This is computationally easier than finding the minimum distances between each point and the line
+    * Sum of squared distances are also called "eingenvalues"
+5. This is repeated for all variables
+6. Line with the largest eigenvalue becomes PC1
+
+[![Alt text](https://img.youtube.com/vi/0Jp4gsfOLMs/0.jpg)](https://www.youtube.com/watch?v=0Jp4gsfOLMs)
