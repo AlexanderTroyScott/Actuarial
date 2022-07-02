@@ -1,6 +1,4 @@
-:memo: Note: Unfortunately I have not had the time to go back and make additions to the predictive analytics exam information which I had summarized on my personal website.  
-
-For this reason I decided to copy everything over to this github repository so that it could be better maintained by the community.
+:memo: Note: I had initially summarized the PA study material as a away to organize review material for a coworker and myself. I was surprised to learn that others were finding the material useful and it had continued to generate hits even years after I had passed the exam. Unfortunately I have not had the time to go back and make additions; therefore, I decided to copy everything over to this github repository so that it could be better maintained by the community and put a link to directing you here.
 
 
 ### 6. Generalized Linear Models
@@ -59,9 +57,13 @@ See casact article
 ##### e) Select and validate a GLM appropriately. 
 
 [![Alt text](https://img.youtube.com/vi/fSytzGwwBVw/0.jpg)](https://www.youtube.com/watch?v=fSytzGwwBVw)
+
 [![Alt text](https://img.youtube.com/vi/Kdsp6soqA7o/0.jpg)](https://www.youtube.com/watch?v=Kdsp6soqA7o)
+
 [![Alt text](https://img.youtube.com/vi/vP06aMoz4v8/0.jpg)](https://www.youtube.com/watch?v=vP06aMoz4v8)
+
 [![Alt text](https://img.youtube.com/vi/4jRBRDbJemM/0.jpg)](https://www.youtube.com/watch?v=4jRBRDbJemM)
+
 [![Alt text](https://img.youtube.com/vi/qcvAqAH60Yw/0.jpg)](https://www.youtube.com/watch?v=qcvAqAH60Yw)
 
 ##### f) Explain the concepts of bias, variance, model complexity, and the bias-variance trade-off. 
