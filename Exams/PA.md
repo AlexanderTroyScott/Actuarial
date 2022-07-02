@@ -75,7 +75,7 @@ Including response will adjust the output to be probabilities; otherwise, the ou
 http://uc-r.github.io/predictive 
 
 
-https://www.casact.org/pubs/monographs/papers/05-Goldburd-Khare-Tevet.pdf 
+[https://www.casact.org/pubs/monographs/papers/05-Goldburd-Khare-Tevet.pdf ](https://github.com/srk-apts/Data-Science/blob/master/2.%20Books,CS/05-Goldburd-Khare-Tevet.pdf)
 
 # 6. Generalized Linear Models
 
