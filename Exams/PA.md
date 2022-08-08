@@ -1,4 +1,4 @@
-:memo: Note: I had initially summarized the PA study material as a away to organize review material for a coworker and myself. I was surprised to learn that others were finding the material useful and it had continued to generate hits even years after I had passed the exam. Unfortunately I have not had the time to go back and make additions; therefore, I decided to copy everything over to this github repository so that it could be better maintained by the community and put a link to directing you here.
+:memo: Note: I had initially summarized the PA study material as a way to organize review material for a coworker and myself. I was surprised to learn that others had discovered the website I had built and that it was being recommended to candidates years after I had passed the exam. I love the subject material, and planned to polish it and add more material, but unfortunately I have not had the time to go back and make those additions; therefore, I decided to copy everything over to this github repository so that it could be maintained by the community.
 
 # Flashcards
 
